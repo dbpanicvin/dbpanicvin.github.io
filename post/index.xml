@@ -8,12 +8,16 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 12 May 2023 02:51:30 +0000</lastBuildDate><atom:link href="https://dbpanicvin.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>New_blog</title>
-      <link>https://dbpanicvin.github.io/post/new_blog/</link>
+      <title>树莓派第一次开机前设置Wi-Fi和SSH</title>
+      <link>https://dbpanicvin.github.io/post/set_ssh_and_wifi_in_raspberry_pi/</link>
       <pubDate>Fri, 12 May 2023 02:51:30 +0000</pubDate>
       
-      <guid>https://dbpanicvin.github.io/post/new_blog/</guid>
-      <description></description>
+      <guid>https://dbpanicvin.github.io/post/set_ssh_and_wifi_in_raspberry_pi/</guid>
+      <description>设置Wi-Fi 树莓派开机前在win读取boot分区 在分区根目录新建一个名为wpa_supplicant.conf的文件 并在文件里添加以下代码
+country=CN ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev update_config=1 network={ ssid=&amp;#34;wifi名字&amp;#34; psk=&amp;#34;wifi密码&amp;#34; priority=1 } 其中 ssid是Wi-Fi名字 psk是Wi-Fi密码 ssid和psk的值都需要加双引号 priority代表的是优先级 数字越大优先级越高
+进入系统后建议先把Wi-Fi信息写入到系统里面
+具体操作为进入系统后在/etc/wpa_supplicant/新建一个文件名为wpa_supplicant.conf并编辑把上述wpa_supplicant.conf的代码复制到新建文件里并保存
+nano /etc/wpa_supplicant/wpa_supplicant.conf 设置SSH 在分区根目录新建一个文件 名为ssh(小写且不含有后缀) 文件内不用填写代码</description>
     </item>
     
   </channel>

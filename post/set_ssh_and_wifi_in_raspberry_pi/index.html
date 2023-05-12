@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>树莓派第一次开机前设置Wi-Fi和SSH | My New Vinson Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="设置Wi-Fi 树莓派开机前在win读取boot分区 在分区根目录新建一个名为wpa_supplicant.conf的文件 并在文件里添加以下代码
+country=CN ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev update_config=1 network={ ssid=&#34;wifi名字&#34; psk=&#34;wifi密码&#34; priority=1 } 其中 ssid是Wi-Fi名字 psk是Wi-Fi密码 ssid和psk的值都需要加双引号 priority代表的是优先级 数字越大优先级越高
+进入系统后建议先把Wi-Fi信息写入到系统里面
+具体操作为进入系统后在/etc/wpa_supplicant/新建一个文件名为wpa_supplicant.conf并编辑把上述wpa_supplicant.conf的代码复制到新建文件里并保存
+nano /etc/wpa_supplicant/wpa_supplicant.conf 设置SSH 在分区根目录新建一个文件 名为ssh(小写且不含有后缀) 文件内不用填写代码">
+<meta name="author" content="">
+<link rel="canonical" href="https://dbpanicvin.github.io/post/set_ssh_and_wifi_in_raspberry_pi/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://dbpanicvin.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dbpanicvin.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dbpanicvin.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dbpanicvin.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dbpanicvin.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="树莓派第一次开机前设置Wi-Fi和SSH" />
+<meta property="og:description" content="设置Wi-Fi 树莓派开机前在win读取boot分区 在分区根目录新建一个名为wpa_supplicant.conf的文件 并在文件里添加以下代码
+country=CN ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev update_config=1 network={ ssid=&#34;wifi名字&#34; psk=&#34;wifi密码&#34; priority=1 } 其中 ssid是Wi-Fi名字 psk是Wi-Fi密码 ssid和psk的值都需要加双引号 priority代表的是优先级 数字越大优先级越高
+进入系统后建议先把Wi-Fi信息写入到系统里面
+具体操作为进入系统后在/etc/wpa_supplicant/新建一个文件名为wpa_supplicant.conf并编辑把上述wpa_supplicant.conf的代码复制到新建文件里并保存
+nano /etc/wpa_supplicant/wpa_supplicant.conf 设置SSH 在分区根目录新建一个文件 名为ssh(小写且不含有后缀) 文件内不用填写代码" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dbpanicvin.github.io/post/set_ssh_and_wifi_in_raspberry_pi/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-05-12T02:51:30+00:00" />
+<meta property="article:modified_time" content="2023-05-12T02:51:30+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="树莓派第一次开机前设置Wi-Fi和SSH"/>
+<meta name="twitter:description" content="设置Wi-Fi 树莓派开机前在win读取boot分区 在分区根目录新建一个名为wpa_supplicant.conf的文件 并在文件里添加以下代码
+country=CN ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev update_config=1 network={ ssid=&#34;wifi名字&#34; psk=&#34;wifi密码&#34; priority=1 } 其中 ssid是Wi-Fi名字 psk是Wi-Fi密码 ssid和psk的值都需要加双引号 priority代表的是优先级 数字越大优先级越高
+进入系统后建议先把Wi-Fi信息写入到系统里面
+具体操作为进入系统后在/etc/wpa_supplicant/新建一个文件名为wpa_supplicant.conf并编辑把上述wpa_supplicant.conf的代码复制到新建文件里并保存
+nano /etc/wpa_supplicant/wpa_supplicant.conf 设置SSH 在分区根目录新建一个文件 名为ssh(小写且不含有后缀) 文件内不用填写代码"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://dbpanicvin.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "树莓派第一次开机前设置Wi-Fi和SSH",
+      "item": "https://dbpanicvin.github.io/post/set_ssh_and_wifi_in_raspberry_pi/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "树莓派第一次开机前设置Wi-Fi和SSH",
+  "name": "树莓派第一次开机前设置Wi-Fi和SSH",
+  "description": "设置Wi-Fi 树莓派开机前在win读取boot分区 在分区根目录新建一个名为wpa_supplicant.conf的文件 并在文件里添加以下代码\ncountry=CN ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev update_config=1 network={ ssid=\u0026#34;wifi名字\u0026#34; psk=\u0026#34;wifi密码\u0026#34; priority=1 } 其中 ssid是Wi-Fi名字 psk是Wi-Fi密码 ssid和psk的值都需要加双引号 priority代表的是优先级 数字越大优先级越高\n进入系统后建议先把Wi-Fi信息写入到系统里面\n具体操作为进入系统后在/etc/wpa_supplicant/新建一个文件名为wpa_supplicant.conf并编辑把上述wpa_supplicant.conf的代码复制到新建文件里并保存\nnano /etc/wpa_supplicant/wpa_supplicant.conf 设置SSH 在分区根目录新建一个文件 名为ssh(小写且不含有后缀) 文件内不用填写代码",
+  "keywords": [
+    
+  ],
+  "articleBody": "设置Wi-Fi 树莓派开机前在win读取boot分区 在分区根目录新建一个名为wpa_supplicant.conf的文件 并在文件里添加以下代码\ncountry=CN ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev update_config=1 network={ ssid=\"wifi名字\" psk=\"wifi密码\" priority=1 } 其中 ssid是Wi-Fi名字 psk是Wi-Fi密码 ssid和psk的值都需要加双引号 priority代表的是优先级 数字越大优先级越高\n进入系统后建议先把Wi-Fi信息写入到系统里面\n具体操作为进入系统后在/etc/wpa_supplicant/新建一个文件名为wpa_supplicant.conf并编辑把上述wpa_supplicant.conf的代码复制到新建文件里并保存\nnano /etc/wpa_supplicant/wpa_supplicant.conf 设置SSH 在分区根目录新建一个文件 名为ssh(小写且不含有后缀) 文件内不用填写代码\n",
+  "wordCount" : "27",
+  "inLanguage": "en",
+  "datePublished": "2023-05-12T02:51:30Z",
+  "dateModified": "2023-05-12T02:51:30Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dbpanicvin.github.io/post/set_ssh_and_wifi_in_raspberry_pi/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My New Vinson Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dbpanicvin.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://dbpanicvin.github.io/" accesskey="h" title="My New Vinson Blog (Alt + H)">My New Vinson Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      树莓派第一次开机前设置Wi-Fi和SSH
+    </h1>
+    <div class="post-meta"><span title='2023-05-12 02:51:30 +0000 UTC'>May 12, 2023</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="设置wi-fi">设置Wi-Fi<a hidden class="anchor" aria-hidden="true" href="#设置wi-fi">#</a></h2>
+<p>树莓派开机前在win读取boot分区 在分区根目录新建一个名为wpa_supplicant.conf的文件 并在文件里添加以下代码</p>
+<pre tabindex="0"><code>country=CN
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+	ssid=&#34;wifi名字&#34;
+	psk=&#34;wifi密码&#34;
+	priority=1
+} 
+</code></pre><p>其中 ssid是Wi-Fi名字 psk是Wi-Fi密码 ssid和psk的值都需要加双引号 priority代表的是优先级 数字越大优先级越高</p>
+<p>进入系统后建议先把Wi-Fi信息写入到系统里面</p>
+<p>具体操作为进入系统后在/etc/wpa_supplicant/新建一个文件名为wpa_supplicant.conf并编辑把上述wpa_supplicant.conf的代码复制到新建文件里并保存</p>
+<pre tabindex="0"><code>nano /etc/wpa_supplicant/wpa_supplicant.conf
+</code></pre><p><img loading="lazy" src="https://i0.hdslb.com/bfs/article/d566245d1808f90022bcb3e59e930e56f254adbc.png@942w_756h_progressive.webp" alt=" "  />
+</p>
+<h2 id="设置ssh">设置SSH<a hidden class="anchor" aria-hidden="true" href="#设置ssh">#</a></h2>
+<p>在分区根目录新建一个文件 名为ssh(小写且不含有后缀) 文件内不用填写代码</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://dbpanicvin.github.io/">My New Vinson Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
