@@ -127,6 +127,20 @@
 
 <article class="first-entry"> 
   <header class="entry-header">
+    <h2>ssh设置快速登录
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>linux系统在~/.ssh/config文件中 Win系统在C:\Users\用户名.ssh\config文件中 编辑config文件,如果无则手动创建它,编辑如下
+Host k1 #这里ip修改成你远程的ip地址 Hostname 192.168.2.2 User root Port 22 IdentityFile ~/.ssh/id_rsa1 Host k2 #这里ip修改成你远程的ip地址 Hostname 192.168.2.2 User xxxx Port 2222 保存后重启ssh
+#linux系统下 systemctl restart sshd #win下无需任何操作 直接在终端输入’ssh k1’即可快速连接到k1所设定的服务器</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-05-12 06:34:21 +0000 UTC'>May 12, 2023</span></footer>
+  <a class="entry-link" aria-label="post link to ssh设置快速登录" href="https://dbpanicvin.github.io/post/ssh_one_click_connect/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>树莓派第一次开机前设置Wi-Fi和SSH
     </h2>
   </header>

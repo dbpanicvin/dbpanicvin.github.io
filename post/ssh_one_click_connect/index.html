@@ -5,12 +5,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Posts | My New Vinson Blog</title>
+<title>ssh设置快速登录 | My New Vinson Blog</title>
 <meta name="keywords" content="">
-<meta name="description" content="Posts - My New Vinson Blog">
+<meta name="description" content="linux系统在~/.ssh/config文件中 Win系统在C:\Users\用户名.ssh\config文件中 编辑config文件,如果无则手动创建它,编辑如下
+Host k1 #这里ip修改成你远程的ip地址 Hostname 192.168.2.2 User root Port 22 IdentityFile ~/.ssh/id_rsa1 Host k2 #这里ip修改成你远程的ip地址 Hostname 192.168.2.2 User xxxx Port 2222 保存后重启ssh
+#linux系统下 systemctl restart sshd #win下无需任何操作 直接在终端输入&rsquo;ssh k1&rsquo;即可快速连接到k1所设定的服务器">
 <meta name="author" content="">
-<link rel="canonical" href="https://dbpanicvin.github.io/post/">
+<link rel="canonical" href="https://dbpanicvin.github.io/post/ssh_one_click_connect/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://dbpanicvin.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://dbpanicvin.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://dbpanicvin.github.io/favicon-32x32.png">
@@ -18,7 +22,6 @@
 <link rel="mask-icon" href="https://dbpanicvin.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://dbpanicvin.github.io/post/index.xml">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,14 +58,20 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Posts" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://dbpanicvin.github.io/post/" />
+</noscript><meta property="og:title" content="ssh设置快速登录" />
+<meta property="og:description" content="linux系统在~/.ssh/config文件中 Win系统在C:\Users\用户名.ssh\config文件中 编辑config文件,如果无则手动创建它,编辑如下
+Host k1 #这里ip修改成你远程的ip地址 Hostname 192.168.2.2 User root Port 22 IdentityFile ~/.ssh/id_rsa1 Host k2 #这里ip修改成你远程的ip地址 Hostname 192.168.2.2 User xxxx Port 2222 保存后重启ssh
+#linux系统下 systemctl restart sshd #win下无需任何操作 直接在终端输入&rsquo;ssh k1&rsquo;即可快速连接到k1所设定的服务器" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dbpanicvin.github.io/post/ssh_one_click_connect/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-05-12T06:34:21+00:00" />
+<meta property="article:modified_time" content="2023-05-12T06:34:21+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="ssh设置快速登录"/>
+<meta name="twitter:description" content="linux系统在~/.ssh/config文件中 Win系统在C:\Users\用户名.ssh\config文件中 编辑config文件,如果无则手动创建它,编辑如下
+Host k1 #这里ip修改成你远程的ip地址 Hostname 192.168.2.2 User root Port 22 IdentityFile ~/.ssh/id_rsa1 Host k2 #这里ip修改成你远程的ip地址 Hostname 192.168.2.2 User xxxx Port 2222 保存后重启ssh
+#linux系统下 systemctl restart sshd #win下无需任何操作 直接在终端输入&rsquo;ssh k1&rsquo;即可快速连接到k1所设定的服务器"/>
 
 
 <script type="application/ld+json">
@@ -75,13 +84,48 @@
       "position":  1 ,
       "name": "Posts",
       "item": "https://dbpanicvin.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "ssh设置快速登录",
+      "item": "https://dbpanicvin.github.io/post/ssh_one_click_connect/"
     }
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ssh设置快速登录",
+  "name": "ssh设置快速登录",
+  "description": "linux系统在~/.ssh/config文件中 Win系统在C:\\Users\\用户名.ssh\\config文件中 编辑config文件,如果无则手动创建它,编辑如下\nHost k1 #这里ip修改成你远程的ip地址 Hostname 192.168.2.2 User root Port 22 IdentityFile ~/.ssh/id_rsa1 Host k2 #这里ip修改成你远程的ip地址 Hostname 192.168.2.2 User xxxx Port 2222 保存后重启ssh\n#linux系统下 systemctl restart sshd #win下无需任何操作 直接在终端输入\u0026rsquo;ssh k1\u0026rsquo;即可快速连接到k1所设定的服务器",
+  "keywords": [
+    
+  ],
+  "articleBody": "linux系统在~/.ssh/config文件中 Win系统在C:\\Users\\用户名.ssh\\config文件中 编辑config文件,如果无则手动创建它,编辑如下\nHost k1 #这里ip修改成你远程的ip地址 Hostname 192.168.2.2 User root Port 22 IdentityFile ~/.ssh/id_rsa1 Host k2 #这里ip修改成你远程的ip地址 Hostname 192.168.2.2 User xxxx Port 2222 保存后重启ssh\n#linux系统下 systemctl restart sshd #win下无需任何操作 直接在终端输入’ssh k1’即可快速连接到k1所设定的服务器\n",
+  "wordCount" : "31",
+  "inLanguage": "en",
+  "datePublished": "2023-05-12T06:34:21Z",
+  "dateModified": "2023-05-12T06:34:21Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dbpanicvin.github.io/post/ssh_one_click_connect/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My New Vinson Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dbpanicvin.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
-<body class="list" id="top">
+<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -124,41 +168,47 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<header class="page-header">
-  <h1>
-    Posts
-  </h1>
-</header>
+<main class="main">
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>ssh设置快速登录
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>linux系统在~/.ssh/config文件中 Win系统在C:\Users\用户名.ssh\config文件中 编辑config文件,如果无则手动创建它,编辑如下
-Host k1 #这里ip修改成你远程的ip地址 Hostname 192.168.2.2 User root Port 22 IdentityFile ~/.ssh/id_rsa1 Host k2 #这里ip修改成你远程的ip地址 Hostname 192.168.2.2 User xxxx Port 2222 保存后重启ssh
-#linux系统下 systemctl restart sshd #win下无需任何操作 直接在终端输入’ssh k1’即可快速连接到k1所设定的服务器</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-05-12 06:34:21 +0000 UTC'>May 12, 2023</span></footer>
-  <a class="entry-link" aria-label="post link to ssh设置快速登录" href="https://dbpanicvin.github.io/post/ssh_one_click_connect/"></a>
-</article>
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      ssh设置快速登录
+    </h1>
+    <div class="post-meta"><span title='2023-05-12 06:34:21 +0000 UTC'>May 12, 2023</span>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>树莓派第一次开机前设置Wi-Fi和SSH
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>设置Wi-Fi 树莓派开机前在win读取boot分区 在分区根目录新建一个名为wpa_supplicant.conf的文件 并在文件里添加以下代码
-country=CN ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev update_config=1 network={ ssid=&#34;wifi名字&#34; psk=&#34;wifi密码&#34; priority=1 } 其中 ssid是Wi-Fi名字 psk是Wi-Fi密码 ssid和psk的值都需要加双引号 priority代表的是优先级 数字越大优先级越高
-进入系统后建议先把Wi-Fi信息写入到系统里面
-具体操作为进入系统后在/etc/wpa_supplicant/新建一个文件名为wpa_supplicant.conf并编辑把上述wpa_supplicant.conf的代码复制到新建文件里并保存
-nano /etc/wpa_supplicant/wpa_supplicant.conf 设置SSH 在分区根目录新建一个文件 名为ssh(小写且不含有后缀) 文件内不用填写代码</p>
+</div>
+  </header> 
+  <div class="post-content"><p>linux系统在~/.ssh/config文件中
+Win系统在C:\Users\用户名.ssh\config文件中
+编辑config文件,如果无则手动创建它,编辑如下</p>
+<pre tabindex="0"><code>Host k1
+    #这里ip修改成你远程的ip地址
+    Hostname 192.168.2.2
+    User root
+    Port 22
+    IdentityFile ~/.ssh/id_rsa1
+
+Host k2
+    #这里ip修改成你远程的ip地址
+    Hostname 192.168.2.2
+    User xxxx
+    Port 2222
+</code></pre><p>保存后重启ssh</p>
+<pre tabindex="0"><code>#linux系统下
+systemctl restart sshd
+
+#win下无需任何操作
+</code></pre><p>直接在终端输入&rsquo;ssh k1&rsquo;即可快速连接到k1所设定的服务器</p>
+
+
   </div>
-  <footer class="entry-footer"><span title='2023-05-12 02:51:30 +0000 UTC'>May 12, 2023</span></footer>
-  <a class="entry-link" aria-label="post link to 树莓派第一次开机前设置Wi-Fi和SSH" href="https://dbpanicvin.github.io/post/set_ssh_and_wifi_in_raspberry_pi/"></a>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
 </article>
     </main>
     

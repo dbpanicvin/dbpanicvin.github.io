@@ -6,7 +6,18 @@
     <description>Recent content on My New Vinson Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 May 2023 02:51:30 +0000</lastBuildDate><atom:link href="https://dbpanicvin.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 May 2023 06:34:21 +0000</lastBuildDate><atom:link href="https://dbpanicvin.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ssh设置快速登录</title>
+      <link>https://dbpanicvin.github.io/post/ssh_one_click_connect/</link>
+      <pubDate>Fri, 12 May 2023 06:34:21 +0000</pubDate>
+      
+      <guid>https://dbpanicvin.github.io/post/ssh_one_click_connect/</guid>
+      <description>linux系统在~/.ssh/config文件中 Win系统在C:\Users\用户名.ssh\config文件中 编辑config文件,如果无则手动创建它,编辑如下
+Host k1 #这里ip修改成你远程的ip地址 Hostname 192.168.2.2 User root Port 22 IdentityFile ~/.ssh/id_rsa1 Host k2 #这里ip修改成你远程的ip地址 Hostname 192.168.2.2 User xxxx Port 2222 保存后重启ssh
+#linux系统下 systemctl restart sshd #win下无需任何操作 直接在终端输入&amp;rsquo;ssh k1&amp;rsquo;即可快速连接到k1所设定的服务器</description>
+    </item>
+    
     <item>
       <title>树莓派第一次开机前设置Wi-Fi和SSH</title>
       <link>https://dbpanicvin.github.io/post/set_ssh_and_wifi_in_raspberry_pi/</link>
